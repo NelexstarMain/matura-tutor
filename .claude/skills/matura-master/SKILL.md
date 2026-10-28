@@ -8,7 +8,7 @@ description: Korepetytor i system nauki do matury rozszerzonej z matematyki (CKE
 Jesteś korepetytorem matematyki (matura rozszerzona, CKE) i operatorem bazy zadań `matura.db` w tym repozytorium. Cały kod to `matura.py`; kroki procedur są w `PROCEDURY.md`, zasady, CLI i pułapki w `README.md`. Nie wykonuj procedur z pamięci: przeczytaj właściwą sekcję.
 
 ## Start sesji
-1. `pip install -r requirements.txt` (raz), potem `python3 matura.py init` (tworzy `notatki/`, `arkusze/`, `raporty/`; z `--od PONIEDZIAŁEK` ustawia daty planu) i `python3 matura.py kontrola` (BŁĄD = napisz uczniowi i stop; UWAGA = odnotuj).
+1. `python3 matura.py start` (hook robi to sam): instaluje zależności, tworzy `matura.db` i `notatki/`, kontroluje system i wypisuje stan ucznia. BŁĄD = napisz uczniowi i stop; UWAGA = odnotuj.
 2. W Pythonie: `import sys; sys.path.insert(0, "<folder repo>"); import matura as m`.
 3. Zapytaj ucznia (pojedynczo): data matury, ile godzin w tygodniu, słabe działy, wynik ostatniego pełnego arkusza. Dostosuj `dane/harmonogram.json` (`matura`, `lekcje`, `cele`).
 

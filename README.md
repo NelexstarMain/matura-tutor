@@ -20,11 +20,11 @@ Wymagania: Python 3.10+, `poppler-utils` (`pdftoppm`); do raportów dodatkowo Te
 ```bash
 git clone <adres repo> && cd matura-tutor
 pip install -r requirements.txt
-python3 matura.py init --od 2026-11-02     # matura.db z wzorca, notatki/, daty planu od tego poniedziałku
-python3 matura.py kontrola                 # test systemu (ok. 5 s), kod 0 = działa
+python3 matura.py start                    # krok ręczny: robi to samo co hook (init + kontrola + stan ucznia)
+python3 matura.py plan --od 2026-11-02     # daty planu od wybranego poniedziałku
 ```
 
-Potem poproś Claude'a o pracę: wczytaj skill `skille/matura-master/SKILL.md` (w Claude Code skopiuj folder do `~/.claude/skills/` albo `.claude/skills/`; w claude.ai wgraj jako skill; w projekcie wklej jego treść do instrukcji i dodaj `README.md` oraz `PROCEDURY.md` do wiedzy projektu). Pierwsze zdanie może brzmieć: „Zacznijmy: zrób mi arkusz diagnostyczny.”
+Najprościej: otwórz folder w Claude Code (albo wgraj repo do projektu Claude). Wszystko ładuje się samo: `CLAUDE.md` mówi Claude'owi, czym jest ten system, hook `SessionStart` (`.claude/settings.json`) odpala `python3 matura.py start` (instalacja zależności, `matura.db` z wzorca, kontrola, stan ucznia), a skill `matura-master` leży w `.claude/skills/`. Nowemu uczniowi Claude zadaje pytania wstępne po jednym i układa plan. Bez hooka (inne klienty) wystarczy powiedzieć Claude'owi: „Uruchom `python3 matura.py start` i zacznij.”
 
 Najczęstsze polecenia: `python3 matura.py arkusz --ids ... --out arkusze/RRRR-MM-DD_GGMM/arkusz.pdf`, `python3 matura.py raport`, `python3 matura.py petla dzis`, `python3 matura.py plan --od PONIEDZIAŁEK`. Pełna lista funkcji i poleceń: `python3 matura.py` bez argumentów oraz kod w `matura.py` (każda funkcja ma docstring po polsku); kroki procedur: `PROCEDURY.md`.
 
@@ -32,9 +32,9 @@ Najczęstsze polecenia: `python3 matura.py arkusz --ids ... --out arkusze/RRRR-M
 
 | Ścieżka | Po co |
 | --- | --- |
-| `matura.py` | cały kod: biblioteka i CLI (`init`, `plan`, `kontrola`, `arkusz`, `petla`, `raport`, `raport-calosc`, `raport-atlas`, `sprzataj`) |
+| `matura.py` | cały kod: biblioteka i CLI (`start`, `init`, `plan`, `kontrola`, `arkusz`, `petla`, `raport`, `raport-calosc`, `raport-atlas`, `sprzataj`) |
 | `PROCEDURY.md` | kroki: arkusz, sprawdzanie, rozgrzewka, raport, przegląd planu |
-| `skille/matura-master/SKILL.md` | master skill dla Claude'a |
+| `CLAUDE.md`, `.claude/` | instrukcja ładowana automatycznie, hook startowy i master skill (`.claude/skills/matura-master/`) |
 | `dane/` | wzorcowa baza bez historii prób, harmonogram, listy odrzuconych i wadliwych obrazów |
 | `baza_obrazy/` | obrazy zadań (nie ruszać, ścieżki są w bazie) |
 | `requirements.txt` | zależności Pythona |

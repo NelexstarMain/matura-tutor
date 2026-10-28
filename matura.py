@@ -7046,12 +7046,11 @@ def _main_kontrola() -> int:
 
 
 MAPA = {   # co wolno trzymać w folderze systemu (README.md, „Mapa folderu”); wszystko inne to obcy plik
-    "": {"matura.py", "matura.db", "README.md", "PROCEDURY.md", "dane", "notatki", "skille", "baza_obrazy", "arkusze",
+    "": {"matura.py", "matura.db", "README.md", "PROCEDURY.md", "dane", "notatki", ".claude", "CLAUDE.md", "baza_obrazy", "arkusze",
          "raporty", ".git", ".gitignore", "__pycache__", "requirements.txt"},
     "dane": {"harmonogram.json", "wadliwe_obrazy.json", "odrzucone.json", "instaluj_tex.sh", "baza_wzorcowa.db"},
     "notatki": {"dziennik_bledow.md", "postep.md", "karty"},
     "notatki/karty": {"reguly.md", "pytania.md", "kombinatoryka_cyfry.md"},
-    "skille": {"matura-master"},
 }
 WZORY = {"arkusze": r"\d{4}-\d\d-\d\d_\d{4}(_przyklad)?", "raporty": r"\d{4}-\d\d-\d\d_(tydzien|calosc|atlas|metoda)(_sym)?"}
 
@@ -7266,11 +7265,52 @@ def _main_plan() -> int:
     return 0
 
 
+def _main_start() -> int:
+    """start: jedno polecenie na początek sesji. Przygotowuje środowisko (zależności, matura.db, notatki), robi kontrolę
+    i wypisuje Claude'owi krótki opis systemu oraz stan ucznia z instrukcją, co robić dalej."""
+    import io
+    from contextlib import redirect_stdout
+    ap = argparse.ArgumentParser(prog="matura.py start")
+    ap.parse_args()
+    sys.argv = ["matura.py init"]
+    bufor = io.StringIO()
+    with redirect_stdout(bufor):
+        _main_init()
+        bledy.clear(); uwagi.clear()
+        rc = _main_kontrola()
+    kontrola = [l for l in bufor.getvalue().splitlines() if l.startswith(("BŁĄD", "UWAGA"))]
+    st = Statystyki()
+    print("# System matura-tutor: korepetytor do matury rozszerzonej z matematyki (CKE)")
+    print("Rola: jesteś korepetytorem (metoda sokratyczna, bez gotowych rozwiązań, pytania pojedynczo, wzory w LaTeX, po polsku)")
+    print("i operatorem bazy 4608 zadań z obrazami (matura.db, wektory 160D). Kod: matura.py; kroki: PROCEDURY.md; mapa i pułapki: README.md.")
+    print("Z Pythona: import sys; sys.path.insert(0, '.'); import matura as m. Nie wykonuj procedur z pamięci: czytaj sekcje PROCEDURY.md.")
+    print(f"Kontrola systemu: {'OK' if rc == 0 else 'BŁĄD (napisz uczniowi, zatrzymaj się)'}" + "".join(f"\n  {l}" for l in kontrola))
+    nowy = st["laczna_liczba_prob"] == 0
+    if nowy:
+        print("\n## Nowy uczeń (brak historii prób)")
+        print("Przywitaj się krótko i zadaj POJEDYNCZO (po jednym pytaniu naraz) pytania: 1) data matury i ile tygodni zostało; "
+              "2) ile godzin w tygodniu i w które dni; 3) działy, których uczeń nie przerabiał albo nie lubi; "
+              "4) wynik ostatniego pełnego arkusza (jeśli jest); 5) czy ma drukarkę (arkusz PDF jest do wydruku, inaczej rozwiązuje na kartce).")
+        print("Potem: `python3 matura.py plan --od <poniedziałek>`, dostosuj matura/lekcje/cele w dane/harmonogram.json "
+              "(przy krótszym terminie skróć plan przez m.Skroc) i złóż arkusz diagnostyczny (PROCEDURY.md → Arkusz, faza 0).")
+    else:
+        print("\n## Stan ucznia")
+        try:
+            print(Raport())
+        except Exception as e:  # noqa: BLE001
+            print(f"(Raport() niedostępny: {type(e).__name__}: {e})")
+        ns = Niesprawdzone()
+        if ns:
+            print("Arkusze czekające na sprawdzenie (uczeń może przysłać zdjęcia): " + ", ".join(ns))
+        print("Dalej: zapytaj, czego uczeń potrzebuje (arkusz na dziś, sprawdzenie zdjęć, raport), i wykonaj odpowiednią sekcję PROCEDURY.md.")
+    return 0 if rc == 0 else 1
+
+
 m = p = R = petla = sys.modules[__name__]   # dawne moduły (matura, plan, raport, petla) to teraz jeden plik
 
 POLECENIA = {
     "kontrola": "_main_kontrola", "arkusz": "_main_arkusz", "petla": "_main_petla", "raport": "_main_raport",
-    "init": "_main_init", "plan": "_main_plan", "raport-calosc": "_main_raport_calosc", "raport-atlas": "_main_raport_atlas", "sprzataj": "_main_sprzatanie",
+    "start": "_main_start", "init": "_main_init", "plan": "_main_plan", "raport-calosc": "_main_raport_calosc", "raport-atlas": "_main_raport_atlas", "sprzataj": "_main_sprzatanie",
 }
 
 
