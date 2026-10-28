@@ -1,10 +1,10 @@
 # Procedury systemu matura
 
-Zasady, mapa folderu, CLI i spis funkcji: `README.md`. Polecenia uruchamiaj z głównego folderu repozytorium; w Pythonie `import sys; sys.path.insert(0, "<folder repo>"); import matura as m`. Krok 0 każdej procedury: `python3 matura.py kontrola` („BŁĄD” → „Gdy coś się nie uda”, „UWAGA” tylko odnotuj).
+Zasady, mapa folderu, CLI i spis funkcji: `docs/DOKUMENTACJA.md`. Polecenia uruchamiaj z głównego folderu repozytorium; w Pythonie `import sys; sys.path.insert(0, "<folder repo>"); import matura as m`. Krok 0 każdej procedury: `python3 matura.py kontrola` („BŁĄD” → „Gdy coś się nie uda”, „UWAGA” tylko odnotuj).
 
 ## Arkusz
 
-Używasz, gdy uczeń prosi o arkusz (albo godzinę przed lekcją, jeśli ustawił to jako zadanie cykliczne); ta sekcja i `README.md` wystarczą.
+Używasz, gdy uczeń prosi o arkusz (albo godzinę przed lekcją, jeśli ustawił to jako zadanie cykliczne); ta sekcja i `docs/DOKUMENTACJA.md` wystarczą.
 
 Ustalenia stałe:
 - Arkusz trafia do ucznia jako PDF w rozmowie (bez maili i stron WWW, chyba że uczeń o to poprosi).
@@ -108,7 +108,7 @@ Pytania zadawaj pojedynczo, wyjaśnienia tylko przy błędach, życzliwie i konk
 9. **Fiszka** (`notatki/karty/reguly.md`): jest fiszka na ten błąd (`python3 matura.py petla lista`) → `python3 matura.py petla wroc NR`; inaczej `python3 matura.py petla dodaj "<sygnał bez słowa jeśli>" "<odruch>" --przyklad "id X (DD.MM): co się stało" --typ <typ> --dzial "<dział>"`. Bez fiszki tylko błędy jednorazowe bez ogólnej reguły (np. zmęczenie).
 10. **Rozgrzewka i kontekst.** Odpowiedzi porównaj z `klucz` (liczy się „Zalicz, gdy …”, nie brzmienie): `python3 matura.py petla ocen RRRR-MM-DD_GGMM 1:tak 2:nie 3:tak 4:tak 5:tak` (`--popraw` poprawia ocenę); bez odpowiedzi nie oceniaj, przypomnij o nich jednym zdaniem. Kontekst lekcji: `python3 matura.py petla kontekst RRRR-MM-DD_GGMM --start 14:02 --koniec 15:15 --sen 7 --zm-start 2 --zm-koniec 4 --najtrudniejsze "…" --pytanie "…"` (tylko wypełnione pola, `kontekst.json`, kolejne wywołanie uzupełnia). Na „Pytanie do korepetytora” odpowiedz w kroku 13 pytaniem naprowadzającym albo krótkim wyjaśnieniem.
 11. **WYNIK.md**: `m.Wynik("RRRR-MM-DD_GGMM")` (tabela nr · id · punkty · kraj · typ błędu, suma, procent, typy, zadania bez wpisu, „Na tle kraju”: punkty wobec przeciętnego maturzysty, błędy w zadaniach łatwych dla kraju, przy prawdziwej maturze wynik wobec średniej kraju, centyl przy arkuszu 50 pkt, prognoza matury). Zaraz potem `python3 matura.py petla bramki RRRR-MM-DD_GGMM` dopisuje „Bramki i kontekst” (pewność, minuty, utknął, plan, kontrola; pewne błędy, kalibracja, tempo wobec 3,6 min/pkt, utknięcia, kontekst, rozgrzewka). Gdy plan lub kontrola nie były wpisane, a z rozwiązania widać, czy były, dodaj własną ocenę `--plan 1:tak 2:nie … --kontrola 1:tak 2:nie …` (tylko zadania bez tagu). `Wynik` nadpisuje cały plik: po każdym jego uruchomieniu powtórz `petla bramki`. Pod spodem 2–3 powtarzające się problemy własnymi słowami.
-12. **Karta metody**: pierwszy błąd `pojęciowy` lub `metoda` w dziale bez karty w `notatki/karty/` → karta według formatu w `README.md` (Mapa folderu), dołączona do odpowiedzi; istniejącą uzupełnij.
+12. **Karta metody**: pierwszy błąd `pojęciowy` lub `metoda` w dziale bez karty w `notatki/karty/` → karta według formatu w `docs/DOKUMENTACJA.md` (Mapa folderu), dołączona do odpowiedzi; istniejącą uzupełnij.
 13. **Pełny arkusz**: wiersz w `notatki/postep.md` → „Pełne arkusze” (data, zestaw, punkty /50, %, czas, dział z największą stratą) i porównanie z progiem fazy (tabela „Progi faz”). Próg niespełniony: napisz to w odpowiedzi; decyzje o planie podejmuje przegląd.
 14. **Odpowiedź** dla ucznia, krótko: wynik (np. 31/40 pkt, 78%) i zdanie na tle kraju (szacunek oznacz „ok.”); pewne błędy; błędy w zadaniach łatwych dla kraju; 2–3 błędy z regułami „jeśli–to”; wynik rozgrzewki jednym zdaniem (przy każdym „nie” poprawna odpowiedź i reguła: tu uczeń pierwszy raz widzi klucz); zdanie z pól, jeśli coś wynika (tempo, utknięcie, zmęczenie); odpowiedź na jego pytanie; co wróci jako powtórka. Dołącz kartę metody, jeśli powstała. Odpowiadaj tylko w tym wątku; przed odpowiedzią lista statusu ✓.
 

@@ -1,6 +1,6 @@
 """matura.py: biblioteka projektu (baza zadań, plan, pętla błędu, arkusze, raporty, kontrola) i jedyne wejście CLI.
 
-Uruchamianie: python3 matura.py <polecenie> [opcje]   (polecenia: patrz README.md, sekcja CLI)
+Uruchamianie: python3 matura.py <polecenie> [opcje]   (polecenia: patrz docs/DOKUMENTACJA.md, sekcja CLI)
 Z Pythona:    import matura as m; m.Szukaj(...)
 """
 from __future__ import annotations
@@ -6978,6 +6978,9 @@ def ok(warunek: bool, opis: str, krytyczny: bool = True) -> None:
 
 
 def _main_kontrola() -> int:
+    if not (NOTATKI / "postep.md").exists():   # świeży klon: przygotuj notatki, zanim kontrola ich zażąda
+        sys.argv = ["matura.py init"]
+        _main_init()
     for mod in ("numpy", "scipy", "sympy", "reportlab", "PIL"):
         try:
             importlib.import_module(mod)
@@ -7032,7 +7035,7 @@ def _main_kontrola() -> int:
                f"propozycja na dziś ma tylko {len(prop['sloty'])} zadań", krytyczny=False)
     except Exception as e:  # noqa: BLE001
         bledy.append(f"Propozycja() rzuca {type(e).__name__}: {e}")
-    for f in ("PROCEDURY.md", "README.md", "notatki/dziennik_bledow.md", "notatki/postep.md"):
+    for f in ("PROCEDURY.md", "docs/DOKUMENTACJA.md", "README.md", "notatki/dziennik_bledow.md", "notatki/postep.md"):
         ok((BASE / f).exists(), f"brak pliku {f}")
     _kontrola_mapy()
     try:  # rozgrzewka nie zatrzymuje arkusza, więc tylko uwaga
@@ -7045,9 +7048,9 @@ def _main_kontrola() -> int:
     return _podsumuj_kontrole()
 
 
-MAPA = {   # co wolno trzymać w folderze systemu (README.md, „Mapa folderu”); wszystko inne to obcy plik
-    "": {"matura.py", "matura.db", "README.md", "PROCEDURY.md", "dane", "notatki", ".claude", "CLAUDE.md", "baza_obrazy", "arkusze",
-         "raporty", ".git", ".gitignore", "__pycache__", "requirements.txt"},
+MAPA = {   # co wolno trzymać w folderze systemu (docs/DOKUMENTACJA.md, „Mapa folderu”); wszystko inne to obcy plik
+    "": {"matura.py", "matura.db", "docs/DOKUMENTACJA.md", "PROCEDURY.md", "dane", "notatki", ".claude", "CLAUDE.md", "baza_obrazy", "arkusze",
+         "raporty", ".git", ".gitignore", "__pycache__", "requirements.txt", "LICENSE", "docs", "README.md"},
     "dane": {"harmonogram.json", "wadliwe_obrazy.json", "odrzucone.json", "instaluj_tex.sh", "baza_wzorcowa.db"},
     "notatki": {"dziennik_bledow.md", "postep.md", "karty"},
     "notatki/karty": {"reguly.md", "pytania.md", "kombinatoryka_cyfry.md"},
@@ -7061,7 +7064,7 @@ def _kontrola_mapy() -> None:
         kat = BASE / rel if rel else BASE
         if kat.is_dir():
             obce = sorted(x.name for x in kat.iterdir() if x.name not in dozw)
-            ok(not obce, f"obce pliki w {rel or 'folderze systemu'}: {', '.join(obce)} (zobacz README, Mapa folderu)", krytyczny=False)
+            ok(not obce, f"obce pliki w {rel or 'folderze systemu'}: {', '.join(obce)} (zobacz docs/DOKUMENTACJA.md, Mapa folderu)", krytyczny=False)
     for rel, wzor in WZORY.items():
         kat = BASE / rel
         if kat.is_dir():
@@ -7282,7 +7285,7 @@ def _main_start() -> int:
     st = Statystyki()
     print("# System matura-tutor: korepetytor do matury rozszerzonej z matematyki (CKE)")
     print("Rola: jesteś korepetytorem (metoda sokratyczna, bez gotowych rozwiązań, pytania pojedynczo, wzory w LaTeX, po polsku)")
-    print("i operatorem bazy 4608 zadań z obrazami (matura.db, wektory 160D). Kod: matura.py; kroki: PROCEDURY.md; mapa i pułapki: README.md.")
+    print("i operatorem bazy 4608 zadań z obrazami (matura.db, wektory 160D). Kod: matura.py; kroki: PROCEDURY.md; mapa i pułapki: docs/DOKUMENTACJA.md.")
     print("Z Pythona: import sys; sys.path.insert(0, '.'); import matura as m. Nie wykonuj procedur z pamięci: czytaj sekcje PROCEDURY.md.")
     print(f"Kontrola systemu: {'OK' if rc == 0 else 'BŁĄD (napisz uczniowi, zatrzymaj się)'}" + "".join(f"\n  {l}" for l in kontrola))
     nowy = st["laczna_liczba_prob"] == 0
