@@ -1,53 +1,36 @@
-<div align="center">
+<p align="center"><img src="docs/banner.svg" alt="matura-tutor: korepetytor AI do matury rozszerzonej z matematyki" width="100%"></p>
 
-<img src="docs/banner.svg" alt="matura-tutor: matura z matematyki na 100%" width="100%">
+<p align="center">
+<a href="LICENSE"><img alt="Licencja MIT" src="https://img.shields.io/badge/licencja-MIT-3B4BFF?style=flat-square&labelColor=0E1330"></a>
+<img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-3B4BFF?style=flat-square&labelColor=0E1330">
+<img alt="Claude Code" src="https://img.shields.io/badge/Claude%20Code-gotowe-3B4BFF?style=flat-square&labelColor=0E1330">
+</p>
 
-<br>
+<p align="center"><img src="docs/liczby.svg" alt="4608 zadań CKE, 160 wymiarów, powtórki po 3, 7 i 21 dniach, 29 tygodni planu" width="100%"></p>
 
-<a href="LICENSE"><img alt="Licencja MIT" src="https://img.shields.io/badge/licencja-MIT-2B3BFF?style=for-the-badge"></a>
-<img alt="4608 zadań" src="https://img.shields.io/badge/zadania-4608-FF5C8A?style=for-the-badge">
-<img alt="Działa z Claude" src="https://img.shields.io/badge/dzia%C5%82a%20z-Claude-12C8A0?style=for-the-badge">
-<img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-FFD23F?style=for-the-badge&labelColor=0E1330">
-
-</div>
-
-<br>
-
-<h2 align="center">Cztery kroki, które się powtarzają</h2>
-
-<img src="docs/kroki.svg" alt="Arkusz, zdjęcia, sprawdzanie, raport" width="100%">
-
-<p align="center"><sub>Potem od nowa, ale z nowym profilem. Im więcej zadań zrobisz, tym trafniej system dobiera następne.</sub></p>
-
-<h2 align="center">Start</h2>
+## Start
 
 ```bash
 git clone https://github.com/NelexstarMain/matura-tutor && cd matura-tutor
-claude    # reszta dzieje się sama
+claude
 ```
 
-<p align="center">Folder ładuje się automatycznie: <code>CLAUDE.md</code>, hook startowy i skill <code>matura-master</code> są w repozytorium.<br>W innym kliencie powiedz Claude'owi: <i>„Uruchom <code>python3 matura.py start</code> i zacznij.”</i></p>
+Reszta dzieje się sama. `CLAUDE.md` mówi Claude'owi, czym jest system, hook startowy uruchamia `python3 matura.py start` (zależności, baza, kontrola, stan ucznia), a skill `matura-master` leży w `.claude/skills/`. W innym kliencie wystarczy napisać: *Uruchom `python3 matura.py start` i zacznij.*
 
-<h2 align="center">Co w środku</h2>
+<p align="center"><img src="docs/kroki.svg" alt="Arkusz, rozwiązanie, sprawdzanie, raport, i od nowa" width="100%"></p>
 
-<table>
-<tr>
-<td width="33%" valign="top"><h3>🎯 Baza</h3>4608 zadań z arkuszy CKE (2002–2026), każde jako obraz z tagami w 160 wymiarach.</td>
-<td width="33%" valign="top"><h3>🧠 Pamięć</h3>Opanowanie działów, powtórki po 3, 7 i 21 dniach, każdy błąd jako reguła „Jeśli …, to …”.</td>
-<td width="33%" valign="top"><h3>📅 Plan</h3>29 tygodni od diagnozy do pełnych arkuszy próbnych, daty ustawiasz jednym poleceniem.</td>
-</tr>
-</table>
+## Zawartość
 
-| Plik | Po co |
+| | |
 | --- | --- |
 | `matura.py` | cały kod i CLI |
-| `PROCEDURY.md` | kroki: arkusz, sprawdzanie, rozgrzewka, raport, przegląd planu |
-| `docs/DOKUMENTACJA.md` | zasady, mapa folderu, CLI, spis funkcji, pułapki |
+| `PROCEDURY.md` | arkusz, sprawdzanie, rozgrzewka, raport, przegląd planu |
+| `docs/DOKUMENTACJA.md` | zasady, mapa folderu, CLI, funkcje, pułapki |
 | `CLAUDE.md`, `.claude/` | instrukcja, hook startowy, skill |
 | `dane/`, `baza_obrazy/` | baza zadań bez historii prób |
 
-Wymagania: Python 3.10+, `poppler-utils`; do raportów TeX Live (`bash dane/instaluj_tex.sh`).
+Wymagania: Python 3.10+ i `poppler-utils`; do raportów PDF także TeX Live (`bash dane/instaluj_tex.sh`).
 
-<h2 align="center">Prywatność i licencja</h2>
+## Prywatność i licencja
 
-<p align="center">Twoje postępy (<code>matura.db</code>, <code>notatki/</code>, <code>arkusze/</code>, <code>raporty/</code>) zostają lokalnie i są w <code>.gitignore</code>.<br>Kod, dokumentacja i skill: <a href="LICENSE">MIT</a>. Zadania i obrazy to arkusze CKE, służą do nauki i nie są objęte licencją.</p>
+Postępy ucznia (`matura.db`, `notatki/`, `arkusze/`, `raporty/`) zostają na jego komputerze i są w `.gitignore`. Kod, dokumentacja i skill są na licencji [MIT](LICENSE). Zadania i obrazy pochodzą z arkuszy CKE, służą do nauki i nie są objęte licencją.

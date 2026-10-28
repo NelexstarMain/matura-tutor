@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="matura-tutor">
-  <rect width="256" height="256" rx="58" fill="#2B3BFF"/>
-  <path d="M58 60V198H198" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
-  <path d="M74 176 C100 170 108 140 130 134 C154 128 156 100 184 78" fill="none" stroke="#FF5C8A" stroke-width="14" stroke-linecap="round"/>
-  <circle cx="92" cy="170" r="7" fill="#fff"/>
-  <circle cx="132" cy="133" r="7" fill="#fff"/>
-  <circle cx="190" cy="73" r="19" fill="#FFD23F"/>
-  <circle cx="190" cy="73" r="19" fill="none" stroke="#fff" stroke-width="5"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="matura-tutor"><rect width="256" height="256" rx="58" fill="#0E1330"/><path d="M58 60V198H198" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/><path d="M74 176 C100 170 108 140 130 134 C154 128 156 100 184 78" fill="none" stroke="#3B4BFF" stroke-width="14" stroke-linecap="round"/><circle cx="190" cy="73" r="20" fill="#FFD23F"/></svg>
