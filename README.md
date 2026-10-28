@@ -1,40 +1,36 @@
-<p align="center">
-  <img src="docs/logo.svg" alt="Logo matura-tutor" width="112">
-</p>
+<div align="center">
 
-<h1 align="center">matura-tutor</h1>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/naglowek-ciemny.svg">
+  <img src="docs/naglowek-jasny.svg" alt="matura-tutor" height="64">
+</picture>
 
-<p align="center">
-  <img src="docs/banner.svg" alt="Matura rozszerzona z matematyki. Fragment zeszytu: rozwiązane równanie logarytmiczne poprawione czerwonym długopisem, wynik 3 na 4 i reguła: jeśli logarytm, to najpierw dziedzina." width="100%">
-</p>
+<p>Korepetytor AI do matury rozszerzonej z matematyki, działający w Claude Code.</p>
 
-<p align="center">
-  Dobiera zadania z arkuszy CKE pod twoje luki, sprawdza rozwiązania jak egzaminator<br>
-  i pamięta każdy błąd, aż przestanie wracać.
-</p>
+<a href="LICENSE"><img alt="Licencja MIT" src="https://img.shields.io/badge/licencja-MIT-2F3DE8?style=flat-square"></a>
+<img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-2F3DE8?style=flat-square">
+<img alt="4608 zadań CKE" src="https://img.shields.io/badge/zadania_CKE-4608-2F3DE8?style=flat-square">
 
-<p align="center">
-  <a href="LICENSE"><img alt="Licencja MIT" src="https://img.shields.io/badge/licencja-MIT-1D3A9E?style=flat-square&labelColor=1C2030"></a>
-  <img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-1D3A9E?style=flat-square&labelColor=1C2030">
-  <img alt="Claude Code: gotowe" src="https://img.shields.io/badge/Claude%20Code-gotowe-1D3A9E?style=flat-square&labelColor=1C2030">
-  <img alt="Zadania CKE 2002–2026" src="https://img.shields.io/badge/zadania%20CKE-2002%E2%80%932026-D3262B?style=flat-square&labelColor=1C2030">
-</p>
-
-<p align="center">
-  <a href="#start"><b>Start</b></a>&nbsp;&nbsp;&nbsp;
-  <a href="#jak-wyglada-lekcja"><b>Lekcja</b></a>&nbsp;&nbsp;&nbsp;
-  <a href="#jak-dobiera-zadania"><b>Dobór zadań</b></a>&nbsp;&nbsp;&nbsp;
-  <a href="#co-dostajesz"><b>Co dostajesz</b></a>&nbsp;&nbsp;&nbsp;
-  <a href="docs/DOKUMENTACJA.md"><b>Dokumentacja</b></a>
-</p>
+</div>
 
 <br>
 
 <p align="center">
-  <img src="docs/liczby.svg" alt="4608 zadań z arkuszy CKE z lat 2002–2026, 160 wymiarów opisu zadania, powtórki co 1 do 28 dni, 29 tygodni planu" width="100%">
+  <img src="docs/podglad.png" alt="Arkusz ćwiczeniowy i dwie strony raportu tygodniowego wygenerowane przez matura.py" width="100%">
 </p>
+<p align="center"><sub>Arkusz i raport wygenerowane przez <code>matura.py</code>. Raport na danych symulowanych.</sub></p>
 
-## Start
+## O projekcie
+
+matura-tutor zamienia Claude'a w korepetytora, który prowadzi ucznia od diagnozy do matury. Ma bazę 4608 zadań z arkuszy CKE z lat 2002–2026, składa z nich arkusze PDF pod konkretne luki, sprawdza zdjęcia rozwiązań według zasad oceniania CKE i co tydzień wydaje raport z prognozą wyniku.
+
+- **Dobór zadań.** Każde zadanie jest opisane wektorem 160 wymiarów. System wybiera zadania najbliższe temu, czego uczeń jeszcze nie umie, w trudności, przy której skuteczność zostaje w przedziale 60–80%.
+- **Sprawdzanie.** Punkty liczone jak na egzaminie. Przy błędzie Claude zadaje jedno pytanie naprowadzające zamiast pokazywać gotowe rozwiązanie.
+- **Dziennik błędów.** Każdy błąd zostaje zapisany jako reguła „Jeśli …, to …” i wraca w rozgrzewce w odstępach od 1 do 28 dni. Zadanie z błędem wraca po trzech dniach jako bliźniak.
+- **Raport tygodniowy.** PDF z LaTeX-a: opanowanie działów z przedziałem niepewności, porównanie z wynikami kraju, prognoza na maturach 2023–2026.
+- **Plan na 29 tygodni.** Kolejka bloków działów zakończona pełnymi arkuszami. Co dwa tygodnie przegląd, najwyżej jedna zmiana.
+
+## Szybki start
 
 ```bash
 git clone https://github.com/NelexstarMain/matura-tutor
@@ -42,43 +38,30 @@ cd matura-tutor
 claude
 ```
 
-To wszystko. Przy starcie sesji hook uruchamia `python3 matura.py start`: instaluje zależności, tworzy bazę `matura.db` z wzorca, sprawdza system i wypisuje, co dalej. Nowego ucznia Claude najpierw pyta o datę matury, czas w tygodniu i słabe działy, po jednym pytaniu naraz.
+Przy starcie sesji hook uruchamia `python3 matura.py start`. Polecenie instaluje zależności, tworzy lokalną bazę `matura.db`, sprawdza system i wypisuje kolejny krok. Nowego ucznia Claude najpierw pyta o datę matury, czas na naukę i słabe działy, a potem składa arkusz diagnostyczny.
 
 > [!TIP]
-> Poza Claude Code wystarczy napisać: *Uruchom `python3 matura.py start` i zacznij.*
+> W innym kliencie wystarczy napisać: *Uruchom `python3 matura.py start` i zacznij.*
 
-## Jak wygląda lekcja
+## Jak przebiega lekcja
 
-<p align="center">
-  <img src="docs/kroki.svg" alt="Pętla nauki: 1 arkusz, 2 rozwiązanie, 3 sprawdzanie, 4 raport, potem od nowa z dokładniejszym profilem ucznia" width="100%">
-</p>
+1. **Arkusz.** Claude składa PDF z zadaniami dobranymi pod luki ucznia i pięcioma pytaniami rozgrzewki z dziennika błędów.
+2. **Rozwiązanie.** Uczeń rozwiązuje na kartce, z zegarem, i wysyła zdjęcia.
+3. **Sprawdzanie.** Punkty według zasad CKE, typ każdego błędu i nowa reguła do dziennika.
+4. **Raport.** Raz w tygodniu: opanowanie działów, prognoza wyniku i plan na następny tydzień.
 
-Arkusz zaczyna się od pięciominutowej rozgrzewki z reguł, które ostatnio ci uciekały. Rozwiązujesz na kartce, z zegarem, i wysyłasz zdjęcia. Claude liczy punkty według zasad CKE, a przy błędzie zadaje jedno pytanie naprowadzające zamiast pokazywać gotowe rozwiązanie. Każdy błąd trafia do dziennika jako reguła „Jeśli …, to …”, z której powstaje fiszka.
+Każda lekcja uzupełnia profil ucznia, więc kolejny arkusz jest dobrany dokładniej.
 
-## Jak dobiera zadania
-
-<p align="center">
-  <img src="docs/wektor.svg" alt="Zadanie 436 jako siatka 160 kratek: 120 działów wymagań CKE, 34 narzędzia, 6 cech stylu; zaznaczone logarytmy, potęgi, dziedzina, obciążenie rachunkowe i wieloetapowość" width="100%">
-</p>
-
-Każde z 4608 zadań jest opisane 160 liczbami: 120 działów z wymagań CKE, 34 narzędzia (np. usuwanie niewymierności) i 6 cech stylu (rachunki, haczyki, wieloetapowość). Twoje próby układają się w taki sam wektor, więc system szuka zadań najbliższych temu, czego jeszcze nie umiesz, w trudności dopasowanej do bieżącej skuteczności. Cel to 60–80% poprawnych odpowiedzi: po porażce trochę łatwiej, po sukcesie trudniej.
-
-Zadanie z błędem odpoczywa trzy dni, potem wraca jego bliźniak, czyli inne zadanie o podobnym wektorze. Reguły z dziennika wracają w rozgrzewce w odstępach od 1 do 28 dni, za każdym razem w innej formie.
-
-## Co dostajesz
+## Raport tygodniowy
 
 <p align="center">
-  <img src="docs/artefakty.svg" alt="Arkusz PDF z zadaniami, raport tygodniowy PDF z opanowaniem działów i prognozą oraz fiszki z regułami" width="100%">
+  <img src="docs/wykres.png" alt="Wykres 3D z raportu: przewidywana szansa na komplet punktów w zależności od działu i łatwości zadania" width="85%">
 </p>
+<p align="center"><sub>Szansa na komplet punktów w funkcji działu i łatwości krajowej zadania. Kolor czerwony oznacza szansę poniżej 50%.</sub></p>
 
-| | |
-| --- | --- |
-| **Arkusz PDF** | zadania z bazy CKE, czas, punktacja i rozgrzewka z twoich fiszek |
-| **Wynik i analiza** | punkty za każde zadanie, typ błędu i reguła do zapamiętania |
-| **Raport tygodniowy** | PDF z LaTeX-a: opanowanie działów z przedziałem niepewności, prognoza wyniku na maturach 2023–2026, plan na następny tydzień |
-| **Plan na 29 tygodni** | od diagnozy przez bloki działów do pełnych arkuszy; co dwa tygodnie przegląd i najwyżej jedna zmiana |
+Raport ma około ośmiu stron: aktywność w tygodniu, profil umiejętności, wynik na tle kraju, analizę błędów, kolejkę powtórek, harmonogram i komentarz korepetytora. Na prośbę ucznia powstaje też raport z całej historii i atlas bazy zadań.
 
-## W repozytorium
+## Struktura
 
 ```text
 matura-tutor/
@@ -91,20 +74,29 @@ matura-tutor/
 └── baza_obrazy/           obrazy zadań z arkuszy CKE
 ```
 
-Najczęstsze polecenia: `python3 matura.py kontrola` (test systemu, około 5 s), `python3 matura.py raport` (raport tygodniowy), `python3 matura.py petla dzis` (fiszki na dziś). Pełna lista w [dokumentacji](docs/DOKUMENTACJA.md#cli).
-
-## Wymagania
-
-- Python 3.10+ (pakiety z `requirements.txt` instaluje `start`)
-- `poppler-utils` do podglądu PDF
-- TeX Live do raportów: `bash dane/instaluj_tex.sh` (raport wywoła go sam przy pierwszym uruchomieniu)
-
-## Prywatność i licencja
-
-Twoje postępy (`matura.db`, `notatki/`, `arkusze/`, `raporty/`) zostają na twoim komputerze i są w `.gitignore`. Kod, dokumentacja i skill są na licencji [MIT](LICENSE). Zadania i obrazy pochodzą z arkuszy CKE, służą do nauki i nie są objęte tą licencją.
+<details>
+<summary><b>Najczęstsze polecenia</b></summary>
 
 <br>
 
-<p align="center">
-  <img src="docs/logo.svg" alt="" width="40">
-</p>
+| Polecenie | Co robi |
+| --- | --- |
+| `python3 matura.py start` | przygotowanie sesji i stan ucznia |
+| `python3 matura.py kontrola` | test systemu i mapy folderu (około 5 s) |
+| `python3 matura.py petla dzis` | fiszki do powtórki na dziś |
+| `python3 matura.py raport` | raport tygodniowy PDF |
+| `python3 matura.py raport --symulacja` | raport na danych testowych |
+
+Pełna lista w [dokumentacji](docs/DOKUMENTACJA.md#cli).
+
+</details>
+
+## Wymagania
+
+- Python 3.10 lub nowszy; pakiety z `requirements.txt` instaluje `start`
+- `poppler-utils` do podglądu stron PDF
+- TeX Live z obsługą języka polskiego do raportów: `bash dane/instaluj_tex.sh`
+
+## Prywatność i licencja
+
+Dane ucznia (`matura.db`, `notatki/`, `arkusze/`, `raporty/`) zostają na jego komputerze i są wyłączone z gita. Kod, dokumentacja i skill są udostępnione na licencji [MIT](LICENSE). Zadania i obrazy pochodzą z arkuszy CKE, służą do nauki i nie są objęte tą licencją.
