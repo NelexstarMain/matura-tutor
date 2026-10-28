@@ -7,16 +7,16 @@
 
 <p>Korepetytor AI do matury rozszerzonej z matematyki, działający w Claude Code.</p>
 
-<a href="LICENSE"><img alt="Licencja MIT" src="https://img.shields.io/badge/licencja-MIT-2F3DE8?style=flat-square"></a>
-<img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-2F3DE8?style=flat-square">
-<img alt="4608 zadań CKE" src="https://img.shields.io/badge/zadania_CKE-4608-2F3DE8?style=flat-square">
+<a href="LICENSE"><img alt="Licencja MIT" src="https://img.shields.io/badge/licencja-MIT-0A0A0A?style=flat-square"></a>
+<img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-0A0A0A?style=flat-square">
+<img alt="4608 zadań CKE" src="https://img.shields.io/badge/zadania_CKE-4608-0A0A0A?style=flat-square">
 
 </div>
 
 <br>
 
 <p align="center">
-  <img src="docs/podglad.png" alt="Arkusz ćwiczeniowy i dwie strony raportu tygodniowego wygenerowane przez matura.py" width="100%">
+  <img src="docs/podglad.svg" alt="Arkusz ćwiczeniowy i dwie strony raportu tygodniowego wygenerowane przez matura.py" width="100%">
 </p>
 <p align="center"><sub>Arkusz i raport wygenerowane przez <code>matura.py</code>. Raport na danych symulowanych.</sub></p>
 
@@ -55,7 +55,7 @@ Każda lekcja uzupełnia profil ucznia, więc kolejny arkusz jest dobrany dokła
 ## Raport tygodniowy
 
 <p align="center">
-  <img src="docs/wykres.png" alt="Wykres 3D z raportu: przewidywana szansa na komplet punktów w zależności od działu i łatwości zadania" width="85%">
+  <img src="docs/wykres.svg" alt="Wykres 3D z raportu: przewidywana szansa na komplet punktów w zależności od działu i łatwości zadania" width="85%">
 </p>
 <p align="center"><sub>Szansa na komplet punktów w funkcji działu i łatwości krajowej zadania. Kolor czerwony oznacza szansę poniżej 50%.</sub></p>
 
