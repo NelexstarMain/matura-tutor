@@ -1,4 +1,11 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/krawedz-gora-ciemna.svg">
+  <img src="docs/krawedz-gora-jasna.svg" alt="" width="100%">
+</picture>
+
 <div align="center">
+
+<br>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/naglowek-ciemny.svg">
@@ -100,3 +107,10 @@ Pełna lista w [dokumentacji](docs/DOKUMENTACJA.md#cli).
 ## Prywatność i licencja
 
 Dane ucznia (`matura.db`, `notatki/`, `arkusze/`, `raporty/`) zostają na jego komputerze i są wyłączone z gita. Kod, dokumentacja i skill są udostępnione na licencji [MIT](LICENSE). Zadania i obrazy pochodzą z arkuszy CKE, służą do nauki i nie są objęte tą licencją.
+
+<br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/krawedz-dol-ciemna.svg">
+  <img src="docs/krawedz-dol-jasna.svg" alt="" width="100%">
+</picture>
