@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+arkusze/
+raporty/
+notatki/
+matura.db

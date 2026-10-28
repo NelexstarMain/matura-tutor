@@ -1,0 +1,783 @@
+{
+ "opis": "Kolejka bloków do matury 11.05.2027, nie sztywny kalendarz. Daty, przerwa i pełne arkusze stoją; treść tygodni przesuwa przegląd co 2 tygodnie (PROCEDURY.md, sekcja Przegląd planu) przez m.Wydluz/Skroc. Faza 3 to bufor (min. 4 tygodnie). Progi w 'cele' są orientacyjne.",
+ "matura": "2027-05-11T09:00",
+ "lekcje": {
+  "pon": [
+   "16:30"
+  ],
+  "wt": [
+   "14:00",
+   "16:30"
+  ],
+  "czw": [
+   "13:00",
+   "16:30"
+  ]
+ },
+ "lekcja": {
+  "zadania": [
+   5,
+   6
+  ],
+  "minuty": 90
+ },
+ "sklad_arkusza": {
+  "0 Diagnoza": {
+   "blok": 6,
+   "powtorki": 0,
+   "mieszane": 0
+  },
+  "1 Nowe i zapomniane działy": {
+   "blok": 3,
+   "powtorki": 2,
+   "mieszane": 1
+  },
+  "Przerwa świąteczna": {
+   "blok": 0,
+   "powtorki": 4,
+   "mieszane": 2
+  },
+  "2 Trudne typy zadań otwartych": {
+   "blok": 3,
+   "powtorki": 2,
+   "mieszane": 1
+  },
+  "3 Arkusze": {
+   "blok": 0,
+   "luki": 3,
+   "powtorki": 2,
+   "mieszane": 1
+  },
+  "4 Szlif": {
+   "blok": 0,
+   "luki": 3,
+   "powtorki": 2,
+   "mieszane": 1
+  }
+ },
+ "pelny_arkusz": {
+  "dzien": "wt",
+  "czesc_1": "zadania 1–7 o 14:00",
+  "czesc_2": "zadania 8–13 o 16:30",
+  "limit_minut": 180
+ },
+ "cele": {
+  "2026-11-03": "arkusz bazowy policzony",
+  "2026-12-20": "60% w arkuszu",
+  "2027-02-28": "75% w arkuszu",
+  "2027-04-25": "90% w trzech arkuszach z rzędu"
+ },
+ "rezerwa_pelnych_arkuszy": [
+  "CKE_2025_Z01",
+  "CKE_2025_Z02",
+  "CKE_2025_Z03",
+  "CKE_2025_Z04",
+  "CKE_2025_Z05",
+  "CKE_2025_Z06",
+  "CKE_2025_Z07",
+  "CKE_2025_Z08",
+  "CKE_2025_Z09",
+  "CKE_2026_Z01",
+  "CKE_2026_Z02",
+  "CKE_2026_Z03",
+  "CKE_2026_Z04",
+  "CKE_2026_Z05",
+  "CKE_2026_Z06",
+  "CKE_2026_Z07",
+  "CKE_2026_Z08",
+  "CKE_2026_Z09",
+  "CKE_2025_05",
+  "CKE_2026_05"
+ ],
+ "tygodnie": [
+  {
+   "tydzien": 1,
+   "od": "2026-10-19",
+   "do": "2026-10-25",
+   "faza": "0 Diagnoza",
+   "blok": "Diagnoza: wszystkie działy",
+   "klucze": [
+    {
+     "Kombinatoryka": 3
+    },
+    {
+     "Prawdopodobieństwo warunkowe": 3
+    },
+    {
+     "Równania trygonometryczne": 3
+    },
+    {
+     "Granica ciągu": 3
+    },
+    {
+     "Zastosowanie pochodnej": 3
+    },
+    {
+     "Równania kwadratowe z parametrem": 3
+    },
+    {
+     "Okrąg i koło": 3
+    },
+    {
+     "Wzajemne położenie prostej i okręgu": 3
+    },
+    {
+     "Kąt między prostą a płaszczyzną": 3
+    },
+    {
+     "Ciąg geometryczny: iloraz": 3
+    },
+    {
+     "Równania logarytmiczne": 3
+    },
+    {
+     "Twierdzenie Bezouta": 3
+    },
+    {
+     "Równania z wartością bezwzględną": 3
+    }
+   ],
+   "length": [
+    2.5,
+    4.5
+   ],
+   "pelny": null,
+   "uwagi": "Po 2 zadania z każdego działu, rotacyjnie; bez powtórek, bo nie ma historii."
+  },
+  {
+   "tydzien": 2,
+   "od": "2026-10-26",
+   "do": "2026-11-01",
+   "faza": "0 Diagnoza",
+   "blok": "Diagnoza cd. i arkusz bazowy",
+   "klucze": [
+    {
+     "Kombinatoryka": 3
+    },
+    {
+     "Prawdopodobieństwo warunkowe": 3
+    },
+    {
+     "Równania trygonometryczne": 3
+    },
+    {
+     "Granica ciągu": 3
+    },
+    {
+     "Zastosowanie pochodnej": 3
+    },
+    {
+     "Równania kwadratowe z parametrem": 3
+    },
+    {
+     "Okrąg i koło": 3
+    },
+    {
+     "Wzajemne położenie prostej i okręgu": 3
+    },
+    {
+     "Kąt między prostą a płaszczyzną": 3
+    },
+    {
+     "Ciąg geometryczny: iloraz": 3
+    },
+    {
+     "Równania logarytmiczne": 3
+    },
+    {
+     "Twierdzenie Bezouta": 3
+    },
+    {
+     "Równania z wartością bezwzględną": 3
+    }
+   ],
+   "length": [
+    3.0,
+    5.0
+   ],
+   "pelny": null,
+   "uwagi": "Arkusz bazowy CKE_2025_Z01 przeniesiony na pon 2.11 11:00–14:00 w całości (prośba uczeńa 21.10.2026); 27.10 zwykłe lekcje diagnozy."
+  },
+  {
+   "tydzien": 3,
+   "od": "2026-11-02",
+   "do": "2026-11-08",
+   "faza": "1 Nowe i zapomniane działy",
+   "blok": "Kombinatoryka i prawdopodobieństwo klasyczne",
+   "klucze": [
+    {
+     "Kombinatoryka": 3
+    },
+    {
+     "Klasyczna definicja prawdopodobieństwa": 3
+    }
+   ],
+   "length": [
+    2.5,
+    4.0
+   ],
+   "pelny": null,
+   "uwagi": "Nowy dział: pierwsze 2 lekcje w bloku, potem mieszanie. Pon 2.11 11:00–14:00: pełny arkusz bazowy CKE_2025_Z01 w całości (180 min), PDF ręcznie (send_later), nie przez p.Propozycja."
+  },
+  {
+   "tydzien": 4,
+   "od": "2026-11-09",
+   "do": "2026-11-15",
+   "faza": "1 Nowe i zapomniane działy",
+   "blok": "Prawdopodobieństwo warunkowe, całkowite, Bernoulli",
+   "klucze": [
+    {
+     "Prawdopodobieństwo warunkowe": 3
+    },
+    {
+     "Klasyczna definicja prawdopodobieństwa": 1
+    }
+   ],
+   "length": [
+    2.5,
+    4.5
+   ],
+   "pelny": null,
+   "uwagi": "Statystyka opisowa wypadła: nie było jej na maturach rozszerzonych 2023–2026 (wagi CKE 23.10.2026)."
+  },
+  {
+   "tydzien": 5,
+   "od": "2026-11-16",
+   "do": "2026-11-22",
+   "faza": "1 Nowe i zapomniane działy",
+   "blok": "Trygonometria: wzory, wykresy, równania",
+   "klucze": [
+    {
+     "Równania trygonometryczne": 3
+    },
+    {
+     "Wzory redukcyjne": 2
+    },
+    {
+     "Wykresy funkcji trygonometrycznych": 2
+    }
+   ],
+   "length": [
+    2.5,
+    4.5
+   ],
+   "pelny": null,
+   "uwagi": "Bez nierówności trygonometrycznych (usunięte z wymagań)."
+  },
+  {
+   "tydzien": 6,
+   "od": "2026-11-23",
+   "do": "2026-11-29",
+   "faza": "1 Nowe i zapomniane działy",
+   "blok": "Trygonometria w trójkącie: tw. sinusów i cosinusów, pola",
+   "klucze": [
+    {
+     "Twierdzenie sinusów": 3
+    },
+    {
+     "Wzory na pole trójkąta": 2
+    }
+   ],
+   "length": [
+    3.0,
+    4.5
+   ],
+   "pelny": null,
+   "uwagi": ""
+  },
+  {
+   "tydzien": 7,
+   "od": "2026-11-30",
+   "do": "2026-12-06",
+   "faza": "1 Nowe i zapomniane działy",
+   "blok": "Granice: ciąg, szereg geometryczny, funkcja",
+   "klucze": [
+    {
+     "Granica ciągu": 3
+    },
+    {
+     "Szereg geometryczny": 3
+    },
+    {
+     "Granica funkcji": 1
+    }
+   ],
+   "length": [
+    2.5,
+    4.0
+   ],
+   "pelny": null,
+   "uwagi": "Nowy dział. Granica funkcji z wagą 1: na maturach 2023–2026 raz (2024, 2 pkt)."
+  },
+  {
+   "tydzien": 8,
+   "od": "2026-12-07",
+   "do": "2026-12-13",
+   "faza": "1 Nowe i zapomniane działy",
+   "blok": "Pochodna: styczna, monotoniczność, ekstrema",
+   "klucze": [
+    {
+     "Pochodna funkcji": 3
+    },
+    {
+     "Zastosowanie pochodnej": 3
+    }
+   ],
+   "length": [
+    2.5,
+    4.5
+   ],
+   "pelny": null,
+   "uwagi": "Nowy dział."
+  },
+  {
+   "tydzien": 9,
+   "od": "2026-12-14",
+   "do": "2026-12-20",
+   "faza": "1 Nowe i zapomniane działy",
+   "blok": "Równania i nierówności: wymierne, moduł",
+   "klucze": [
+    {
+     "Równania i nierówności wymierne": 3
+    },
+    {
+     "Równania z wartością bezwzględną": 3
+    },
+    {
+     "Nierówności z wartością bezwzględną": 2
+    }
+   ],
+   "length": [
+    3.0,
+    4.5
+   ],
+   "pelny": "CKE_2025_Z02",
+   "uwagi": "Próbna matura CKE w szkole od 14.12 (sprawdź termin rozszerzenia). Tw. Bezouta wypadło (0 razy na maturach 2023–2026), moduł dawał 4 pkt w 2025 i 2026."
+  },
+  {
+   "tydzien": 10,
+   "od": "2026-12-21",
+   "do": "2026-12-27",
+   "faza": "Przerwa świąteczna",
+   "blok": "Powtórki mieszane (lekcje opcjonalne)",
+   "klucze": [],
+   "length": [
+    3.0,
+    4.5
+   ],
+   "pelny": null,
+   "uwagi": "Tylko powtórki z kolejki; brak lekcji = brak arkusza."
+  },
+  {
+   "tydzien": 11,
+   "od": "2026-12-28",
+   "do": "2027-01-03",
+   "faza": "Przerwa świąteczna",
+   "blok": "Powtórki mieszane (lekcje opcjonalne)",
+   "klucze": [],
+   "length": [
+    3.0,
+    4.5
+   ],
+   "pelny": "CKE_2025_Z03",
+   "uwagi": "Arkusz opcjonalny, w dowolnym dniu."
+  },
+  {
+   "tydzien": 12,
+   "od": "2027-01-04",
+   "do": "2027-01-10",
+   "faza": "2 Trudne typy zadań otwartych",
+   "blok": "Optymalizacja z pochodną I",
+   "klucze": [
+    {
+     "Zagadnienia optymalizacyjne": 3
+    },
+    {
+     "Zastosowanie pochodnej": 2
+    }
+   ],
+   "length": [
+    3.5,
+    5.0
+   ],
+   "pelny": null,
+   "uwagi": ""
+  },
+  {
+   "tydzien": 13,
+   "od": "2027-01-11",
+   "do": "2027-01-17",
+   "faza": "2 Trudne typy zadań otwartych",
+   "blok": "Optymalizacja II: geometria i bryły",
+   "klucze": [
+    {
+     "Zagadnienia optymalizacyjne": 3
+    },
+    {
+     "Ostrosłupy prawidłowe": 1
+    },
+    {
+     "Bryły obrotowe: stożek": 1
+    }
+   ],
+   "length": [
+    4.0,
+    5.5
+   ],
+   "pelny": null,
+   "uwagi": ""
+  },
+  {
+   "tydzien": 14,
+   "od": "2027-01-18",
+   "do": "2027-01-24",
+   "faza": "2 Trudne typy zadań otwartych",
+   "blok": "Parametr: funkcja kwadratowa i wzory Viète'a",
+   "klucze": [
+    {
+     "Wzory Viete'a w zadaniach z parametrem": 3
+    },
+    {
+     "Równania kwadratowe z parametrem": 3
+    },
+    {
+     "Położenie pierwiastków trójmianu": 2
+    }
+   ],
+   "length": [
+    3.5,
+    5.5
+   ],
+   "pelny": null,
+   "uwagi": ""
+  },
+  {
+   "tydzien": 15,
+   "od": "2027-01-25",
+   "do": "2027-01-31",
+   "faza": "2 Trudne typy zadań otwartych",
+   "blok": "Geometria analityczna: okrąg, prosta, wektory",
+   "klucze": [
+    {
+     "Wzajemne położenie prostej i okręgu": 3
+    },
+    {
+     "Wektory na płaszczyźnie": 2
+    },
+    {
+     "Odległość punktu od prostej": 2
+    }
+   ],
+   "length": [
+    3.5,
+    5.5
+   ],
+   "pelny": "CKE_2025_Z04",
+   "uwagi": ""
+  },
+  {
+   "tydzien": 16,
+   "od": "2027-02-01",
+   "do": "2027-02-07",
+   "faza": "2 Trudne typy zadań otwartych",
+   "blok": "Planimetria: dowody, okręgi, czworokąty",
+   "klucze": [
+    {
+     "Okrąg i koło": 3
+    },
+    {
+     "Czworokąt wpisany": 2
+    },
+    {
+     "Twierdzenie o dwusiecznej": 2
+    }
+   ],
+   "length": [
+    3.5,
+    5.5
+   ],
+   "pelny": null,
+   "uwagi": ""
+  },
+  {
+   "tydzien": 17,
+   "od": "2027-02-08",
+   "do": "2027-02-14",
+   "faza": "2 Trudne typy zadań otwartych",
+   "blok": "Planimetria II: podobieństwo, dowody, trygonometria w trójkącie",
+   "klucze": [
+    {
+     "Trójkąty: suma kątów": 3
+    },
+    {
+     "Twierdzenie sinusów": 2
+    },
+    {
+     "Czworokąt wpisany": 2
+    }
+   ],
+   "length": [
+    3.5,
+    5.5
+   ],
+   "pelny": null,
+   "uwagi": "Drugi tydzień planimetrii (wagi CKE 23.10.2026): dowody z podobieństwa były na każdej maturze 2023–2026."
+  },
+  {
+   "tydzien": 18,
+   "od": "2027-02-15",
+   "do": "2027-02-21",
+   "faza": "2 Trudne typy zadań otwartych",
+   "blok": "Stereometria: kąty, przekroje, bryły",
+   "klucze": [
+    {
+     "Kąt między prostą a płaszczyzną": 3
+    },
+    {
+     "Przekroje graniastosłupów": 3
+    },
+    {
+     "Ostrosłupy prawidłowe": 2
+    }
+   ],
+   "length": [
+    3.5,
+    5.5
+   ],
+   "pelny": null,
+   "uwagi": ""
+  },
+  {
+   "tydzien": 19,
+   "od": "2027-02-22",
+   "do": "2027-02-28",
+   "faza": "2 Trudne typy zadań otwartych",
+   "blok": "Ciągi, logarytmy, funkcja wykładnicza",
+   "klucze": [
+    {
+     "Ciąg geometryczny: iloraz": 2
+    },
+    {
+     "Ciąg arytmetyczny: różnica": 2
+    },
+    {
+     "Równania logarytmiczne": 2
+    },
+    {
+     "Równania wykładnicze": 2
+    }
+   ],
+   "length": [
+    3.5,
+    5.5
+   ],
+   "pelny": "CKE_2025_Z05",
+   "uwagi": ""
+  },
+  {
+   "tydzien": 20,
+   "od": "2027-03-01",
+   "do": "2027-03-07",
+   "faza": "2 Trudne typy zadań otwartych",
+   "blok": "Wielomiany z parametrem, dowody algebraiczne, mieszane",
+   "klucze": [
+    {
+     "Rozkład wielomianu": 2
+    },
+    {
+     "Dowodzenie nierówności": 3
+    },
+    {
+     "Dwumian Newtona": 2
+    }
+   ],
+   "length": [
+    4.0,
+    5.5
+   ],
+   "pelny": "CKE_2025_Z06",
+   "uwagi": ""
+  },
+  {
+   "tydzien": 21,
+   "od": "2027-03-08",
+   "do": "2027-03-14",
+   "faza": "3 Arkusze",
+   "blok": "Z analizy: najsłabsze działy",
+   "klucze": [],
+   "length": [
+    4.0,
+    6.0
+   ],
+   "pelny": "CKE_2025_Z07",
+   "uwagi": "Pełny arkusz we wtorek; pozostałe lekcje: luki z analizy i powtórki."
+  },
+  {
+   "tydzien": 22,
+   "od": "2027-03-15",
+   "do": "2027-03-21",
+   "faza": "3 Arkusze",
+   "blok": "Z analizy: najsłabsze działy",
+   "klucze": [],
+   "length": [
+    4.0,
+    6.0
+   ],
+   "pelny": "CKE_2025_Z08",
+   "uwagi": "Pełny arkusz we wtorek; pozostałe lekcje: luki z analizy i powtórki."
+  },
+  {
+   "tydzien": 23,
+   "od": "2027-03-22",
+   "do": "2027-03-28",
+   "faza": "3 Arkusze",
+   "blok": "Z analizy: najsłabsze działy",
+   "klucze": [],
+   "length": [
+    4.0,
+    6.0
+   ],
+   "pelny": "CKE_2025_Z09",
+   "uwagi": "Pełny arkusz we wtorek; pozostałe lekcje: luki z analizy i powtórki."
+  },
+  {
+   "tydzien": 24,
+   "od": "2027-03-29",
+   "do": "2027-04-04",
+   "faza": "3 Arkusze",
+   "blok": "Z analizy: najsłabsze działy",
+   "klucze": [],
+   "length": [
+    4.0,
+    6.0
+   ],
+   "pelny": "CKE_2025_05",
+   "uwagi": "Pełny arkusz we wtorek; pozostałe lekcje: luki z analizy i powtórki."
+  },
+  {
+   "tydzien": 25,
+   "od": "2027-04-05",
+   "do": "2027-04-11",
+   "faza": "3 Arkusze",
+   "blok": "Z analizy: najsłabsze działy",
+   "klucze": [],
+   "length": [
+    4.0,
+    6.0
+   ],
+   "pelny": "CKE_2026_Z02",
+   "uwagi": "Pełny arkusz we wtorek; pozostałe lekcje: luki z analizy i powtórki."
+  },
+  {
+   "tydzien": 26,
+   "od": "2027-04-12",
+   "do": "2027-04-18",
+   "faza": "3 Arkusze",
+   "blok": "Z analizy: najsłabsze działy",
+   "klucze": [],
+   "length": [
+    4.0,
+    6.0
+   ],
+   "pelny": "CKE_2026_Z03",
+   "uwagi": "Pełny arkusz we wtorek; pozostałe lekcje: luki z analizy i powtórki."
+  },
+  {
+   "tydzien": 27,
+   "od": "2027-04-19",
+   "do": "2027-04-25",
+   "faza": "3 Arkusze",
+   "blok": "Z analizy: najsłabsze działy",
+   "klucze": [],
+   "length": [
+    4.0,
+    6.0
+   ],
+   "pelny": "CKE_2026_Z04",
+   "uwagi": "Pełny arkusz we wtorek; pozostałe lekcje: luki z analizy i powtórki."
+  },
+  {
+   "tydzien": 28,
+   "od": "2027-04-26",
+   "do": "2027-05-02",
+   "faza": "4 Szlif",
+   "blok": "Szlif: luki, karta wzorów, tempo",
+   "klucze": [],
+   "length": [
+    4.0,
+    6.0
+   ],
+   "pelny": "CKE_2026_05",
+   "uwagi": "Bez nowych tematów."
+  },
+  {
+   "tydzien": 29,
+   "od": "2027-05-03",
+   "do": "2027-05-09",
+   "faza": "4 Szlif",
+   "blok": "Szlif: ostatni arkusz i odpoczynek",
+   "klucze": [],
+   "length": [
+    4.0,
+    5.5
+   ],
+   "pelny": "CKE_2026_Z06",
+   "uwagi": "Ostatni arkusz najpóźniej w czwartek 6.05; 9–10.05 tylko lekkie powtórki. Matura: wtorek 11.05.2027, 9:00."
+  }
+ ],
+ "zestawy_cke": {
+  "CKE_2025_05": {
+   "ids": [
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    187
+   ],
+   "srednia": 33,
+   "mediana": 28,
+   "odchylenie": 26,
+   "zdajacych": 67384,
+   "opis": "matura maj 2025, formuła 2023; wyniki kraju ze sprawozdania CKE (w % punktów). Zadanie 12 (12.1 + 12.2, 6 pkt) to obraz id 187 z arkusza formuły 2015 (ta sama treść), bo obraz 229 pokazuje 12.2 zamiast 12.1; 228–230 tylko wykluczone z codziennych arkuszy",
+   "wyklucz": [
+    228,
+    229,
+    230
+   ],
+   "arkusz_py": "--akceptuj 217 218 219 220 221 222 223 224 225 226 227 187"
+  },
+  "CKE_2026_05": {
+   "ids": [
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    46
+   ],
+   "srednia": 37,
+   "mediana": 34,
+   "odchylenie": 28,
+   "zdajacych": 88856,
+   "opis": "matura maj 2026, formuła 2023; wyniki kraju ze sprawozdania CKE (w % punktów). Zadanie 12 (12.1 + 12.2, 7 pkt) to obraz id 46 z arkusza formuły 2015 (ta sama treść), bo obraz 58 pokazuje 12.2 zamiast 12.1; 58–59 tylko wykluczone z codziennych arkuszy",
+   "wyklucz": [
+    58,
+    59
+   ],
+   "arkusz_py": "--akceptuj 47 48 49 50 51 52 53 54 55 56 57 46 --rysunek 46"
+  }
+ }
+}

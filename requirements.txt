@@ -1,0 +1,7 @@
+numpy
+scipy
+sympy
+pillow
+reportlab
+matplotlib
+seaborn
