@@ -1,16 +1,10 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/krawedz-gora-ciemna.svg">
-  <img src="docs/krawedz-gora-jasna.svg" alt="" width="100%">
-</picture>
+<img src="docs/krawedz-gora.svg" alt="" width="100%">
 
 <div align="center">
 
 <br>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/naglowek-ciemny.svg">
-  <img src="docs/naglowek-jasny.svg" alt="matura-tutor" height="64">
-</picture>
+<img src="docs/naglowek.svg" alt="matura-tutor" height="80">
 
 <p>Korepetytor AI do matury rozszerzonej z matematyki, działający w Claude Code.</p>
 
@@ -66,7 +60,4 @@ Kod na licencji [MIT](LICENSE). Zadania pochodzą z arkuszy CKE i nie są nią o
 
 <br>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/krawedz-dol-ciemna.svg">
-  <img src="docs/krawedz-dol-jasna.svg" alt="" width="100%">
-</picture>
+<img src="docs/krawedz-dol.svg" alt="" width="100%">
